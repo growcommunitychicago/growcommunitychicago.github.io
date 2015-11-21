@@ -1,0 +1,98 @@
+/* Site: Grow Community Chicago */
+
+
+/* Imports
+=====================================================================*/
+@import url(http://fonts.googleapis.com/css?family=Oswald:300,400|Merriweather:400,700,900,300);
+@import "/styles/reset.css";
+
+
+/* Fonts
+======================================================================*/
+body { font-family: Merriweather, Georgia, "Times New Roman", Times, serif; }
+h1, h2, h3, #logo, #nav, #people { font-family: Oswald, "Arial Narrow", sans-serif; }
+ol, p, ul { margin-bottom: 1em; }
+
+
+/* Basics
+======================================================================*/
+a { color: #2d7fb9; text-decoration: none; }
+a:hover { background: #2d7fb9; color: #fff; }
+body { background: #f2f2f2; font-size: 22px; line-height: 1.5; padding: 50px; }
+cite, em { font-style: italic; }
+h1 { font-size: 40px; line-height: 1.3; margin-bottom: 0.4em; }
+h2 { background: #919191; color: #fff; display: inline-block; margin: 50px 0 0.5em; padding: 0.2em 0.4em; text-transform: uppercase; }
+h3 { margin-bottom: 0.5em; }
+iframe { width: 100%; }
+ol { list-style: decimal; margin-left: 2em; }
+ol ol { list-style: lower-alpha; }
+ol ol ol { list-style: lower-roman; }
+li { margin-bottom: 0.5em; }
+strong { font-weight: 700; }
+ul { list-style: disc; margin-left: 1.5em; }
+
+
+/* Layout
+======================================================================*/
+.clear { clear: both; }
+#page { margin: 0 auto; max-width: 1100px; }
+
+/* Columns */
+.c2l, .c2r { width: 48%; }
+.c2l, .c3l, .c3m { float: left; }
+.c2r, .c3r { float: right; }
+.c3l { margin-right: 3%; }
+.c3l, .c3m, .c3r { width: 31%; }
+
+
+/* Content
+======================================================================*/
+
+/* Footer */
+#footer {
+    border-top: 3px solid #fff;
+    clear: both;
+    color: #4d4d4d;
+    font-size: 13px;
+    margin-top: 3em;
+    padding-top: 0.5em;
+}
+
+/* Header */
+#header { margin-bottom: 50px; }
+
+    /* Logo */
+    #logo { display: inline-block; margin-right: 1.5em; }
+    
+    /* Navigation */
+    #nav { display: inline-block; font-size: 22px; list-style: none; margin: 0; text-transform: uppercase; }
+    #nav a { color: #000; padding: 0 0.4em; }
+    #nav a:hover { color: #fff; }
+    #nav .selected { background: #2d7fb9; color: #fff; }
+    #nav li { display: inline-block; margin: 0 1em 0 0; vertical-align: middle; }
+
+/* Intro */
+#intro { background: #2d7fb9; margin-bottom: 30px; padding: 25px 25px 17px; }
+#intro h1 { font-size: 50px; margin: 0; text-transform: uppercase; }
+#intro, #intro a { color: #fff; }
+
+/* Muted text */
+.mute { color: 333; font-size: 13px; }
+
+/* People */
+#people { font-size: 17px; font-weight: 300; list-style: none; margin: 0; text-transform: uppercase; }
+#people a { color: #fff; display: block; }
+#people a:hover { background: none; opacity: 0.5; }
+#people li { float: left; margin: 0 4.54% 40px 0; width: 30.3%; }
+#people li.end { float: right; margin: 0; }
+#people img { display: block; width: 100%; }
+#people .overlay { background: #004281; display: block; padding: 0.3em 0.4em; }
+#people strong { display: block; font-weight: normal; }
+.profile { display: none; }
+#profile-details { display: none; margin-bottom: 30px; }
+#profile-details .back { clear: left; display: inline-block; float: left; margin-bottom: 0.3em; }
+#profile-details .profile { display: block; }
+#profile-details #profile-description { float: right; width: 65.15%; }
+#profile-details #profile-photo { float: left; margin-bottom: 1em; width: 30.3%; }
+#profile-details #profile-photo img { display: block; width: 100%; }
+#profile-details #profile-photo strong { display: block; }
