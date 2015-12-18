@@ -14,14 +14,17 @@ h1, h2, h3, #logo, #nav, #people { font-family: Oswald, "Arial Narrow", sans-ser
 ol, p, ul { margin-bottom: 1em; }
 
 
-/* Basics
+/* Basics  
+/* Basics  #63A2B8
 ======================================================================*/
 a { color: #2d7fb9; text-decoration: none; }
 a:hover { background: #2d7fb9; color: #fff; }
 body { background: #f2f2f2; font-size: 22px; line-height: 1.5; padding: 50px; }
 cite, em { font-style: italic; }
 h1 { font-size: 40px; line-height: 1.3; margin-bottom: 0.4em; }
-h2 { background: #919191; color: #fff; display: inline-block; margin: 50px 0 0.5em; padding: 0.2em 0.4em; text-transform: uppercase; }
+h2 { font-size: 34px; line-height: 1.3; margin-bottom: 0.4em; }
+/* h2 { background: #919191; color: #fff; display: inline-block; margin: 50px 0 0.5em; padding: 0.2em 0.4em; text-transform: uppercase; }
+*/
 h3 { margin-bottom: 0.5em; }
 iframe { width: 100%; }
 ol { list-style: decimal; margin-left: 2em; }
@@ -71,8 +74,8 @@ ul { list-style: disc; margin-left: 1.5em; }
     #nav .selected { background: #2d7fb9; color: #fff; }
     #nav li { display: inline-block; margin: 0 1em 0 0; vertical-align: middle; }
 
-/* Intro */
-#intro { background: #2d7fb9; margin-bottom: 30px; padding: 25px 25px 17px; }
+/* Intro 2d7fb9 */
+#intro { background: #63A2B8; margin-bottom: 30px; padding: 25px 25px 17px; }
 #intro h1 { font-size: 50px; margin: 0; text-transform: uppercase; }
 #intro, #intro a { color: #fff; }
 
