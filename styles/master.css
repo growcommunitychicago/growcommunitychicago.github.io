@@ -48,6 +48,14 @@ ul { list-style: disc; margin-left: 1.5em; }
 
 /* Content
 ======================================================================*/
+/* Options */
+.options-h, .options-v { list-style: none; margin: 0; }
+.options-h input, .options-v input { margin: 0 0.5em -0.05em 0; }
+.options-h img { border-bottom: 3px solid #fff; padding: 5px; vertical-align: middle; }
+.options-h li, .options-v li { background: none; margin-bottom: 0.3em; padding: 0; }
+.options-h li { display: inline; margin-right: 0.7em; white-space: nowrap; }
+.options-v li { padding-left: 22px; text-indent: -22px; }
+.options-v ul { margin: 0.3em 0 1em; }
 
 /* Footer */
 #footer {
