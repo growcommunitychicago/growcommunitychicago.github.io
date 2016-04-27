@@ -57,6 +57,26 @@ ul { list-style: disc; margin-left: 1.5em; }
 .options-v li { padding-left: 22px; text-indent: -22px; }
 .options-v ul { margin: 0.3em 0 1em; }
 
+gallery.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+gallery.img:hover {
+    border: 1px solid #777;
+}
+
+gallery.img img {
+    width: 100%;
+    height: auto;
+}
+
+gallery.desc {
+    padding: 15px;
+    text-align: center;
+
 /* Footer */
 #footer {
     border-top: 3px solid #fff;
