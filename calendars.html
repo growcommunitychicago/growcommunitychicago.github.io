@@ -1,0 +1,61 @@
+<html>
+<head>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css' />
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.js'></script>
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/gcal.min.js'></script>
+	
+</head>
+
+<style>
+.test-calendar { background-color: red; }
+</style>
+
+<body>
+	<h1>Community Calendar</h1>
+	<div id="filter">
+		<select>
+			<option> value="Lakeview">Lakeview</option>
+		</select>
+	</div>
+
+	<div id="calendar"></div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+		// page is now ready, initialize the calendar...
+
+		$('#calendar').fullCalendar({
+			// put your options and callbacks here
+			googleCalendarApiKey: 'AIzaSyAGSQFkWTtyieHm-xPODDK9d5F2W0n0KzI',
+			<!-- <!-- events: { --> -->
+				<!-- <!-- googlecalendarid: 'nh7kn8n3h3juhfdupf5tqi9sqv1gfe7i@import.calendar.google.com' --> -->
+			<!-- <!-- } --> -->
+			eventSources: [
+				{ googleCalendarId: 'nh7kn8n3h3juhfdupf5tqi9sqv1gfe7i@import.calendar.google.com' },
+				{ googleCalendarId: '1iehrnjvrs5es9gpeeggcvru5g@group.calendar.google.com', className: 'test-calendar' },
+				<!-- { -->
+					<!-- url: 'http://chappellelementaryschool.org/apps/events2/events_rss.jsp?id=0', // use the `url` property -->
+					<!-- color: 'yellow',    // an option! -->
+					<!-- textColor: 'black'  // an option! -->
+				<!-- } -->
+				{ googleCalendarId:'edu_80pms5jimdo0jk55n9onk72mn4@group.calendar.google.com'},
+				{ googleCalendarId:'blainepta@gmail.com'},
+				{ googleCalendarId:'burleytech@yahoo.com'},
+				{ googleCalendarId:'cps.edu_4r96olsnev5n4d77aonf3p3rso@group.calendar.google.com'},
+				{ googleCalendarId:'30vn4h84spdp4d9nc669i05f7g@group.calendar.google.com'},
+				{ googleCalendarId:'s1imq7dend1e81rlu537hqooglc8h8op@import.calendar.google.com'},
+				{ googleCalendarId:'dsku0en9ga4s8q71r9f47vfqlmecv5ku@import.calendar.google.com'},
+				{ googleCalendarId:'admin@ravenswoodelementary.org'},
+				{ googleCalendarId:'communications@waterstoday.org'}
+				
+			]
+			
+
+		});
+
+		});
+	</script>
+</body>
+</html>

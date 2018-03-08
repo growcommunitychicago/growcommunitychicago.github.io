@@ -1,0 +1,98 @@
+<html>
+<head>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.css' />
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.js'></script>
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/gcal.min.js'></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css" />
+	<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.js'></script>
+</head>
+
+<style>
+.test-calendar { background-color: red; }
+</style>
+
+<body>
+	<h1>Community Calendar</h1>
+	<select id="selectSchool">
+	</select>
+	
+	<div id="calendar"></div>
+	<script type="text/javascript">
+		var googleCalendarApiKey = 'AIzaSyAGSQFkWTtyieHm-xPODDK9d5F2W0n0KzI';
+		var currentCalendar = [];
+		var calendars = [
+				{ 'name':'Bell', 'googleCalendarId':'edu_80pms5jimdo0jk55n9onk72mn4@group.calendar.google.com'},
+				{ 'name':'Blaine', 'googleCalendarId':'blainepta@gmail.com'},
+				{ 'name':'Burley', 'googleCalendarId':'burleytech@yahoo.com'},
+				{ 'name':'Coonley', 'googleCalendarId':'cps.edu_4r96olsnev5n4d77aonf3p3rso@group.calendar.google.com'},
+				{ 'name':'Greeley', 'googleCalendarId':'30vn4h84spdp4d9nc669i05f7g@group.calendar.google.com'},
+				{ 'name':'Hamilton', 'googleCalendarId':'s1imq7dend1e81rlu537hqooglc8h8op@import.calendar.google.com'},
+				{ 'name':'McPherson', 'googleCalendarId':'dsku0en9ga4s8q71r9f47vfqlmecv5ku@import.calendar.google.com'},
+				{ 'name':'Ravenswood', 'googleCalendarId':'admin@ravenswoodelementary.org'},
+				{ 'name':'Waters', 'googleCalendarId':'communications@waterstoday.org'},
+				{ 'name':'Lakeview', 'googleCalendarId':'nh7kn8n3h3juhfdupf5tqi9sqv1gfe7i@import.calendar.google.com'}
+			]
+		var filters = [];
+		$.map(calendars, function(calendar){
+			var opt = jQuery.parseJSON('{ "id": "' + calendar.name + '" , "text": "' + calendar.name + '"}');
+			filters.push(opt);
+		});
+		
+		
+		// page is now ready, initialize the calendar...
+		$(document).ready(function() {
+			
+			// initialize filters
+			initFilters();
+			
+			$('#selectSchool').on('change', function(event){
+				var school = this.value;
+				var eventSources = [];
+				
+				var selectedCalendar = $.grep(calendars, function(cal) { return cal.name == school})
+				selectedCalendar = $.map(selectedCalendar, function(cal) {
+					return { googleCalendarId: cal.googleCalendarId };
+				});
+					
+				console.log(["filter changed to", school, selectedCalendar ]); 
+				$('#calendar').fullCalendar('removeEventSources');
+				$('#calendar').fullCalendar('refetchEvents');
+				
+				currentCalendar = selectedCalendar;
+				console.log(["filter changed to", school, currentCalendar ]); 
+				$('#calendar').fullCalendar('addEventSource', selectedCalendar.googleCalendarId);
+				$('#calendar').fullCalendar('refetchEvents');
+			});
+			
+			//default calendar is
+			<!-- var currentCalendar =  [ -->
+				<!-- { googleCalendarId: 'nh7kn8n3h3juhfdupf5tqi9sqv1gfe7i@import.calendar.google.com' } -->
+				<!-- ,{ googleCalendarId: 'blainepta@gmail.com' } -->
+				<!-- ]; -->
+
+			var currentCalendar = [{"googleCalendarId":"blainepta@gmail.com"}];
+//"[{"googleCalendarId":"cps.edu_4r96olsnev5n4d77aonf3p3rso@group.calendar.google.com"}]"
+			
+			console.log(["currentCalendar", currentCalendar]);
+			
+			$('#calendar').fullCalendar({
+				// put your options and callbacks here
+				googleCalendarApiKey: 'AIzaSyAGSQFkWTtyieHm-xPODDK9d5F2W0n0KzI',
+				events: 'nh7kn8n3h3juhfdupf5tqi9sqv1gfe7i@import.calendar.google.com'
+			});
+
+		});
+		
+		var initFilters = function(){
+			$('#selectSchool').select2({
+				data: filters
+			});
+		};
+		
+		
+	</script>
+</body>
+</html>
